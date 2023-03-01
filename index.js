@@ -39,12 +39,15 @@ console.log(dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3"))
 
   örnek input:  [109, 216, 288, 143, 71, 185, -278, 194, 5]
   örnek output: 104
-*/
+*/const numbers = [3,5,7,8,9,10,11,12,28,55,6];
 
-function ortalamaBul(/* kodlar buraya */) {
+function ortalamaBul(numbers) {
   // kodlar buraya
+  const toplam = numbers.reduce((total, sayilar) => total + sayilar,0);
+  console.log(toplam);
+	return toplam/numbers.length;
 }
-
+console.log(ortalamaBul(numbers));
 /*
   GÖREV 3
   - Input:  Bir sayı arrayini ve ortalama bulmaya yarayacak bir fonksiyonu parametre olarak alacak bir fonksiyon oluştur.
