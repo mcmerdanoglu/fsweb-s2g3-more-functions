@@ -39,15 +39,16 @@ console.log(dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3"))
 
   örnek input:  [109, 216, 288, 143, 71, 185, -278, 194, 5]
   örnek output: 104
-*/const numbers = [3,5,7,8,9,10,11,12,28,55,6];
+*/ //const numbers = [3,5,7,8,9,10,11,12,28,55,6]; Test için yazıldı!!!
 
 function ortalamaBul(numbers) {
   // kodlar buraya
   const toplam = numbers.reduce((total, sayilar) => total + sayilar,0);
-  console.log(toplam);
-	return toplam/numbers.length;
+  console.log(toplam); //toplam değeri test için!
+  if (numbers.length>0) {return toplam/numbers.length;}
+	else {return null;}
 }
-console.log(ortalamaBul(numbers));
+console.log(ortalamaBul([109, 216, 288, 143, 71, 185, -278, 194, 5]));
 /*
   GÖREV 3
   - Input:  Bir sayı arrayini ve ortalama bulmaya yarayacak bir fonksiyonu parametre olarak alacak bir fonksiyon oluştur.
@@ -66,11 +67,26 @@ console.log(ortalamaBul(numbers));
 
   örnek input:  [109, 216, 288, 143, 71, 185, -278, 194, 5]
   örnek output: [109, 216, 288, 143, 185, 194]
-*/
+*/ //const numbers1 = [3,5,7,8,9,10,11];
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
+function ortalamadanBuyukleriBul(numbers1, ortalamaBul) {
   // kodlar buraya
+  const ortalama = ortalamaBul(numbers1);
+  const numbers1Values = numbers1.filter((values) => {
+    if (values >= ortalama) {return values;} 
+  else {return null;}
+  });
+  return numbers1.length > 0 ? numbers1Values : null;
+  /*Alternatif olarak filter()less solution()*/
+  /*const newArr =[]; 
+  const ortalama = ortalamaBul(numbers1);
+  for (let i=0;i<numbers1.length;i++){
+  if(numbers1[i]>=ortalama) {newArr.push(numbers1[i]);}
+  }
+  if (numbers1.length!==0) {return newArr;}
+  else {return null;}*/
 }
+console.log(ortalamadanBuyukleriBul([109, 216, 288, 143, 71, 185, -278, 194, 5], ortalamaBul));
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
